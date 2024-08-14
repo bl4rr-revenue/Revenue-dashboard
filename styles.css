@@ -29,11 +29,41 @@ h1 {
 
 .stat-item {
     font-size: 1.5em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px 0;
+    scrollbar-width: thin;
+    scrollbar-color: #34495e #2c3e50;
+}
+
+.scroll-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    background-color: #34495e;
+    border-radius: 10px;
 }
 
 canvas {
-    margin-top: 40px;
+    min-width: 300px;
+    max-width: 400px;
     background-color: #34495e;
     padding: 20px;
     border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+canvas:hover {
+    transform: scale(1.05);
 }
