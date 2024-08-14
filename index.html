@@ -9,21 +9,78 @@
 </head>
 <body>
     <div class="dashboard">
-        <h1>Roblox UGC Sales Dashboard</h1>
-        <div class="stats">
-            <div class="stat-item">
-                <h2>Total Revenue: <span id="total-revenue">$0</span></h2>
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>Ui Art</h2>
             </div>
-            <div class="stat-item">
-                <h2>Total Units Sold: <span id="total-units">0</span></h2>
-            </div>
-        </div>
-
-        <!-- Horizontal Scrollable Section -->
-        <div class="scroll-container">
-            <canvas id="revenueChart"></canvas>
-            <canvas id="unitsChart"></canvas>
-        </div>
+            <nav>
+                <ul>
+                    <li><a href="#"><img src="icons/home.png" alt="Home"> Dashboard</a></li>
+                    <li><a href="#"><img src="icons/sales.png" alt="Sales"> Sales</a></li>
+                    <li><a href="#"><img src="icons/profile.png" alt="Profile"> Profile</a></li>
+                    <li><a href="#"><img src="icons/settings.png" alt="Settings"> Settings</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="content">
+            <header>
+                <div class="header-left">
+                    <h1>Sales Dashboard</h1>
+                </div>
+                <div class="header-right">
+                    <div class="user-info">
+                        <span class="username">John Doe</span>
+                        <img src="icons/user.png" alt="User">
+                    </div>
+                </div>
+            </header>
+            <section class="stats-section">
+                <div class="stats-item">
+                    <h2>Product Sales</h2>
+                    <p id="product-sales">$983,080</p>
+                    <canvas id="productSalesChart"></canvas>
+                </div>
+                <div class="stats-item">
+                    <h2>Total Revenue</h2>
+                    <p id="total-revenue">$983,080</p>
+                    <canvas id="revenueChart"></canvas>
+                </div>
+                <div class="stats-item">
+                    <h2>Total Profit</h2>
+                    <p id="total-profit">$715,803</p>
+                    <canvas id="profitChart"></canvas>
+                </div>
+            </section>
+            <section class="details-section">
+                <div class="transaction-history">
+                    <h2>Transaction History</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Date</th>
+                                <th>Price</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="transaction-history-body">
+                            <!-- Transaction rows will be dynamically added here -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="charts-container">
+                    <div class="chart-item">
+                        <h2>Sale Status</h2>
+                        <canvas id="saleStatusChart"></canvas>
+                    </div>
+                    <div class="chart-item">
+                        <h2>Daily Sale</h2>
+                        <canvas id="dailySaleChart"></canvas>
+                    </div>
+                </div>
+            </section>
+        </main>
     </div>
     <script src="scripts.js"></script>
 </body>
