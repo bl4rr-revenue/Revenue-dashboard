@@ -133,3 +133,26 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
     });
 });
+document.getElementById('loginForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    // Basic client-side validation
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    // Simulated login process (replace with actual authentication)
+    if (username === 'admin' && password === 'password') {
+        // Store session (in a real scenario, you'd use cookies or JWT tokens)
+        localStorage.setItem('isLoggedIn', 'true');
+        window.location.href = 'pages/dashboard.html';
+    } else {
+        alert('Invalid credentials');
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    if (!isLoggedIn && window.location.pathname !== '/index.html') {
+        window.location.href = '/index.html';
+    }
+});
